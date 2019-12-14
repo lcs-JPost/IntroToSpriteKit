@@ -75,34 +75,34 @@ for i in 1...3 {
  Once you have selected the block of code, press the **Command** and / keys at the same time to toggle the comments off all at once.
  
  */
-//// Add a physics body for the hill
-//hill.physicsBody = SKPhysicsBody(texture: hill.texture!,
-//                                 alphaThreshold: 0.5,
-//                                 size: hill.size)
-//hill.physicsBody?.isDynamic = false // Hill will not move (not impacted by physics)
+// Add a physics body for the hill
+hill.physicsBody = SKPhysicsBody(texture: hill.texture!,
+                                 alphaThreshold: 0.5,
+                                 size: hill.size)
+hill.physicsBody?.isDynamic = false // Hill will not move (not impacted by physics)
 
-//// Add a physics body for the boulder
-//boulder.physicsBody = SKPhysicsBody(circleOfRadius: boulder.size.width * 0.5)
+// Add a physics body for the boulder
+boulder.physicsBody = SKPhysicsBody(circleOfRadius: boulder.size.width * 0.5)
 
-//// Add a physics body for all nodes with identifier "one of the crates"
-//for node in scene.children {
-//
-//    // Only look at nodes of type SKSpriteNode
-//    if let thisNode = node as? SKSpriteNode {
-//
-//        // Only the crates
-//        if thisNode.name == "one of the crates" {
-//
-//            // Add a physics body
-//            thisNode.physicsBody = SKPhysicsBody(rectangleOf: thisNode.size)
-//        }
-//
-//    }
-//
-//}
+// Add a physics body for all nodes with identifier "one of the crates"
+for node in scene.children {
 
-//// Configure the view so that physics body edges are visible
-//view.showsPhysics = true
+    // Only look at nodes of type SKSpriteNode
+    if let thisNode = node as? SKSpriteNode {
+
+        // Only the crates
+        if thisNode.name == "one of the crates" {
+
+            // Add a physics body
+            thisNode.physicsBody = SKPhysicsBody(rectangleOf: thisNode.size)
+        }
+
+    }
+
+}
+
+// Configure the view so that physics body edges are visible
+view.showsPhysics = true
 
 /*:
  ### Other types of physics bodies
